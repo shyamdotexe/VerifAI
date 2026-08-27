@@ -1,7 +1,7 @@
 from app_detectors.video_detector import VideoDetector
 
 
-VIDEO_PATH = "uploads/real_01.mp4"
+VIDEO_PATH = "C:/backend/uploads/fake_03.mp4"
 
 
 detector = VideoDetector()
