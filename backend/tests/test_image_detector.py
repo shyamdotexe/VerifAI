@@ -26,6 +26,7 @@ for filename in os.listdir(REAL_DIR):
 detector = ImageDetector()
 
 passed = 0
+errors = 0
 total = len(test_files)
 
 
@@ -56,6 +57,7 @@ for path, expected in test_files:
             print("RESULT: FAIL")
 
     except Exception as exc:
+        errors += 1
         print(f"ERROR: {exc}")
 
 
@@ -64,6 +66,8 @@ print("=" * 60)
 print("IMAGE DETECTOR TEST SUMMARY")
 print("=" * 60)
 print(f"Passed: {passed}/{total}")
+print(f"Prediction failures: {total - passed - errors}")
+print(f"Errors: {errors}")
 
 if total:
     print(f"Accuracy: {(passed / total) * 100:.2f}%")
